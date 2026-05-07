@@ -1,0 +1,99 @@
+/* Premium CSS Design System for Pharmacy App */
+.root {
+    -fx-background-color: #f4f7f6;
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #1976D2;
+    -fx-translate-y: -1px;
+}
+
+.button:pressed {
+    -fx-translate-y: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 1, 0, 0, 1);
+}
+
+.button:disabled {
+    -fx-background-color: #B0BEC5;
+    -fx-text-fill: #ECEFF1;
+    -fx-cursor: default;
+    -fx-effect: none;
+}
+
+.text-field, .password-field {
+    -fx-padding: 8px 12px;
+    -fx-background-color: white;
+    -fx-border-color: #CFD8DC;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #2196F3;
+    -fx-border-width: 2px;
+}
+
+.label {
+    -fx-text-fill: #37474F;
+}
+
+.label-header {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #263238;
+}
+
+.label-error {
+    -fx-text-fill: #D32F2F;
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ECEFF1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+}
+
+.table-view .column-header {
+    -fx-background-color: #F5F7F8;
+    -fx-border-color: transparent transparent #CFD8DC transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #455A64;
+}
+
+.map-pane {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CFD8DC;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+}
+
+.map-point-user {
+    -fx-fill: #2196F3;
+    -fx-stroke: white;
+    -fx-stroke-width: 2px;
+}
+
+.map-point-pharmacy {
+    -fx-fill: #E53935;
+    -fx-stroke: white;
+    -fx-stroke-width: 2px;
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../../../../application/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ilacsistemi.controller.AdminController">
+   <children>
+      <VBox spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label styleClass="header-label" text="Sistem Yönetimi (Admin)">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#cikisYap" styleClass="danger-button" text="Çıkış Yap" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="Eczane Ekle">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="50.0" layoutY="30.0" prefWidth="400.0" spacing="10.0" styleClass="card">
+                                 <children>
+                                    <Label styleClass="sub-header-label" text="Yeni Eczane Tanımlama" />
+                                    <TextField fx:id="txtEczaneAdi" promptText="Eczane Adı" />
+                                    <TextField fx:id="txtAdres" promptText="Adres" />
+                                    <TextField fx:id="txtEnlem" promptText="Enlem (Örn: 41.01)" />
+                                    <TextField fx:id="txtBoylam" promptText="Boylam (Örn: 28.97)" />
+                                    <Button mnemonicParsing="false" onAction="#eczaneKaydet" styleClass="action-button" text="Eczaneyi Kaydet" />
+                                    <Label fx:id="lblEczaneMesaj" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="İlaç Tanımla">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="50.0" layoutY="30.0" prefWidth="400.0" spacing="10.0" styleClass="card">
+                                 <children>
+                                    <Label styleClass="sub-header-label" text="Yeni İlaç Tanımlama" />
+                                    <TextField fx:id="txtIlacAdi" promptText="İlaç Adı" />
+                                    <ComboBox fx:id="cmbIlacTuru" prefWidth="400.0" promptText="İlaç Türü Seçin" />
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="txtFotografYolu" editable="false" promptText="Fotoğraf Yolu (Seçiniz...)" HBox.hgrow="ALWAYS" />
+                                          <Button mnemonicParsing="false" onAction="#fotografSec" styleClass="button" text="Gözat..." />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#ilacKaydet" styleClass="action-button" text="İlacı Kaydet" />
+                                    <Label fx:id="lblIlacMesaj" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Tüm Sistem Stokları">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="20.0" layoutY="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#stoklariYenile" styleClass="button" text="Listeyi Yenile" />
+                                    <TableView fx:id="tblTumStoklar" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                      <columns>
+                                        <TableColumn fx:id="colSEczane" prefWidth="250.0" text="Eczane Adı" />
+                                        <TableColumn fx:id="colSIlac" prefWidth="250.0" text="İlaç Adı" />
+                                          <TableColumn fx:id="colSMiktar" prefWidth="100.0" text="Miktar" />
+                                      </columns>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

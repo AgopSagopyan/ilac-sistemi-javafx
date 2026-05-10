@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" stylesheets="@../../../../application/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ilacsistemi.controller.EczaciController">
+   <children>
+      <VBox spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+               <children>
+                  <Label styleClass="header-label" text="Eczacı Paneli - Stok Yönetimi">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#cikisYap" styleClass="danger-button" text="Çıkış Yap" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            
+            <HBox spacing="15.0" styleClass="card">
+               <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label styleClass="sub-header-label" text="Eczane Seçimi:" />
+                        <ComboBox fx:id="cmbEczane" onAction="#eczaneSecildi" prefWidth="200.0" promptText="Eczanenizi Seçin" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label styleClass="sub-header-label" text="İlaç Seçimi:" />
+                        <ComboBox fx:id="cmbIlac" prefWidth="150.0" promptText="İlaç Seçin" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label styleClass="sub-header-label" text="Miktar:" />
+                        <TextField fx:id="txtMiktar" prefWidth="80.0" promptText="Örn: 50" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#stokGuncelle" prefHeight="35.0" styleClass="action-button" text="Stok Kaydet / Güncelle" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <Label fx:id="lblMesaj" textFill="#27ae60" />
+            
+            <TableView fx:id="tblStoklar" prefHeight="250.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="colIlacAdi" prefWidth="250.0" text="İlaç Adı" />
+                <TableColumn fx:id="colMiktar" prefWidth="150.0" text="Mevcut Stok Miktarı" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
